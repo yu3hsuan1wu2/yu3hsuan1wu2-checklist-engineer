@@ -232,6 +232,26 @@ Each principle entry must include:
 
 ---
 
+## Candidate principles
+
+### P-011 — Separate task plans from operational checklists
+
+**Status:** CANDIDATE  
+**Type:** HYPOTHESIS  
+**Principle:** A one-off task or execution plan may sequence work, ownership, drafting, and publication without functioning as either an SOP or an operational checklist. Keep production actions in the task plan and reserve checklist gates for high-risk transitions where critical omissions must be caught.
+
+**Evidence:** T003 real-world `T1-12` pilot. The six-step administrative list coordinated information gathering, drafting, approval, publication, and save verification. It did not teach a reusable standard procedure, yet several lines were production actions rather than reliability checks. See `tests/results/T003-T1-12-pilot.md`.
+
+**Failure prevented:** Forcing every to-do sequence into SOP or Checklist; diluting operational checklists with ordinary production steps; misclassifying one-off execution plans as standard procedures.
+
+**Behavioral consequence:** None yet. Do not change the runtime taxonomy from this single case. Challenge whether `TASK PLAN` or `TASK PLAN + CHECKLIST` should become a first-class Artifact Fitness category after additional real-world cases and an acceptance test.
+
+**Regression coverage:** T003 pilot only; formal acceptance case not yet established.
+
+**Supersedes / conflicts:** Potentially extends P-001 Artifact Fitness; does not currently supersede it.
+
+---
+
 ## Candidate template
 
 ### P-XXX — Short name
