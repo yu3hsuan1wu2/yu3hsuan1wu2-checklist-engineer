@@ -1,6 +1,6 @@
 ---
 name: checklist-engineer
-description: Design, audit, or field-test operational checklists for complex work. Use when turning source text or a workflow into a checklist, reviewing an existing checklist, deciding whether material is really an SOP rather than a checklist, or testing a draft in realistic use. Preserve expert judgment and do not turn the checklist into an SOP.
+description: Classify source text, workflows, work plans, or mixed procedural artifacts with Artifact Fitness, then design, audit, or field-test operational checklists when checklisting fits. Use when a user asks what kind of artifact a checkbox or procedural document really is, wants a checklist created or reviewed, or wants a draft tested in realistic use. Preserve expert judgment and do not turn checklists into SOPs or task plans.
 ---
 
 # Checklist Engineer
