@@ -10,7 +10,12 @@ An SOP may need scope, roles, prerequisites, complete workflow, branches, except
 ## Checklist
 A compact reliability tool used at a defined point in work to prevent known, avoidable execution failures while preserving professional judgment.
 
-A checklist assumes the underlying work or preventive actions are already established. It is **not** a comprehensive SOP, manual, tutorial, knowledge base, or substitute for expertise. Selectivity is a virtue for a checklist.
+A checklist assumes the underlying work or preventive actions are already established. It is **not** a comprehensive SOP, manual, tutorial, knowledge base, task plan, or substitute for expertise. Selectivity is a virtue for a checklist.
+
+## Task plan
+A bounded execution artifact whose primary function is to sequence or track work that still needs to happen for a task, case, project, or day.
+
+A task plan answers **what work needs to happen next**. Researching, drafting, contacting, deciding, writing, publishing, and following up normally belong here unless a specific action independently earns checklist attention at a reliability pause point.
 
 ## Artifact fitness
 The functional classification of what work artifact a problem needs before design begins.
@@ -18,11 +23,22 @@ The functional classification of what work artifact a problem needs before desig
 Canonical classifications:
 - `SOP`
 - `CHECKLIST`
+- `TASK PLAN`
 - `SOP+CHECKLIST`
+- `TASK PLAN+CHECKLIST`
 - `DECISION SUPPORT`
 - `RESEARCH-DESIGN`
+- `MIXED ARTIFACT` when one source must be decomposed by function
 
 Classify by the artifact's role in the work system, not by length, bullets, numbering, tables, or checkboxes.
+
+## State distinction
+An explicit boundary between workflow states such as `created`, `published`, and `completed`. State distinctions prevent false completion claims but are not automatically checklist items.
+
+## Completion criteria
+Conditions that must be true for a task, day, ticket, or deliverable to count as complete.
+
+Completion criteria become checklist material only when they are actually invoked at a concrete close pause point and the confirmations earn checklist attention.
 
 ## Failure pattern
 A recurring or plausible way work fails even though the necessary knowledge or preventive action is already known.
