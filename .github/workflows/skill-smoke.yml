@@ -1,0 +1,45 @@
+name: Skill smoke test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  install-skill:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install checklist-engineer for Codex
+        run: npx -y skills add . --skill checklist-engineer --agent codex --yes
+
+      - name: Verify installed skill surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f .agents/skills/checklist-engineer/SKILL.md
+          test -f .agents/skills/checklist-engineer/references/DESIGN.md
+          test -f .agents/skills/checklist-engineer/references/AUDIT.md
+          test -f .agents/skills/checklist-engineer/references/COMMUNICATION.md
+          test -f .agents/skills/checklist-engineer/references/FIELD-TEST.md
+          test -f .agents/skills/checklist-engineer/references/OUTPUT-CONTRACT.md
+          grep -q '^name: checklist-engineer$' .agents/skills/checklist-engineer/SKILL.md
+          grep -q 'Failure gate' .agents/skills/checklist-engineer/SKILL.md
+          grep -q 'Pause-point gate' .agents/skills/checklist-engineer/SKILL.md
+          grep -q 'Killer-item gate' .agents/skills/checklist-engineer/SKILL.md
+          grep -q 'Communication gate' .agents/skills/checklist-engineer/SKILL.md
+
+      - name: Verify source skill remains canonical
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f skills/checklist-engineer/SKILL.md
+          cmp skills/checklist-engineer/SKILL.md .agents/skills/checklist-engineer/SKILL.md
