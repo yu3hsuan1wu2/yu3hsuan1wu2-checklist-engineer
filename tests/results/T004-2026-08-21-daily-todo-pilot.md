@@ -8,7 +8,7 @@ Challenge P-011 (`Separate task plans from operational checklists`) with a secon
 
 ## Top-level classification
 
-**Result: mixed artifact.**
+**Result: `MIXED ARTIFACT`.**
 
 The whole document should not be classified as one checklist merely because most lines use checkboxes.
 
@@ -23,7 +23,7 @@ It contains at least four functions:
 
 ### Classification
 
-`TASK PLAN + CHECKLIST`
+`TASK PLAN + CHECKLIST FIT`
 
 The work includes production/coordination actions and two natural reliability gates.
 
@@ -65,7 +65,7 @@ This second gate protects reconciliation, privacy, and unknown-state integrity.
 
 ### Classification
 
-Mostly `CHECKLIST`, with one embedded `DECISION SUPPORT / JUDGMENT` item.
+Mostly `CHECKLIST FIT`, with one embedded `DECISION SUPPORT` item.
 
 ### Pause point — Immediately before publication
 
@@ -95,7 +95,7 @@ Publish only after the pre-publication checks pass and the unresolved auto-close
 
 ### Classification
 
-`TASK PLAN`
+`TASK PLAN FIT`
 
 The section mainly names work that must be performed:
 
@@ -110,9 +110,9 @@ These actions may contain local verification checks, but the section itself is a
 
 ### Classification
 
-`COMPLETION CRITERIA` at document level; can become an `END-OF-DAY CHECKLIST` only when explicitly invoked at the pause point `before closing the workday`.
+`COMPLETION CRITERIA` as a supporting function; it can become an end-of-day operational checklist only when explicitly invoked at the pause point `before closing the workday`.
 
-The listed outcomes are useful because they define what must be true for the day to be considered minimally complete. They do not automatically become checklist items merely because they are checkbox-shaped.
+The listed outcomes define what must be true for the day to be considered minimally complete. They do not automatically become checklist items merely because they are checkbox-shaped.
 
 If used operationally at end of day, the reliable surface becomes:
 
@@ -142,15 +142,44 @@ Artifact Fitness must be able to classify sections or lines when a source is mix
 
 `Decide whether to enable automatic closure` and `UNKNOWN` delivery information must remain visibly unresolved. A checkbox must not convert an unresolved decision or unknown fact into apparent completion.
 
-## P-011 evaluation
+## Formal regression
 
-This pilot independently supports P-011:
+Acceptance Case 11 was added to `tests/acceptance.md`.
 
-- T003: one-off administrative drafting workflow mixed execution actions and checklist gates.
-- T004: daily administrative plan again mixes task actions and multiple operational checklist gates across a different work context.
+It protects these behaviors:
 
-P-011 is no longer supported by a single case. Promotion still requires a formal acceptance case and regression check before runtime taxonomy changes.
+- checkbox syntax does not determine artifact type;
+- task actions stay in `TASK PLAN`;
+- reliability checks are extracted into explicit pause points;
+- mixed sources may return `TASK PLAN + CHECKLIST FIT` / `MIXED ARTIFACT`;
+- unresolved decisions remain decisions;
+- state distinctions remain state semantics;
+- completion criteria become checklist material only when used at a real close pause point;
+- missing facts / unknown states are not invented.
 
-## Candidate follow-on
+Manual regression result against the current repository rules: **11 PASS / 0 FAIL**.
 
-A possible future principle is that **mixed artifacts should be decomposed by function before checklist design**. This may be an extension of P-001/P-011 rather than a separate principle; do not promote a new principle from this pilot alone.
+Cases 1–10 retain their prior behavior. Case 11 is satisfied by the updated Artifact Fitness definitions without adding instructions to always-loaded `SKILL.md`.
+
+## P-011 decision
+
+P-011 is promoted:
+
+- **Status:** `ACTIVE`
+- **Type:** `FIELD-DERIVED`
+
+Evidence now includes two independent real-world administrative artifacts (T003 and T004), a formal acceptance case, and ADR 0004.
+
+Runtime consequence:
+
+- `TASK PLAN FIT`
+- `TASK PLAN + CHECKLIST FIT`
+- `MIXED ARTIFACT`
+
+are now supported Artifact Fitness outputs.
+
+## What was intentionally not promoted
+
+`COMPLETION CRITERIA` is not a new first-class Artifact Fitness category from this case alone.
+
+The current rule is narrower: completion criteria may remain a supporting function or become an operational checklist when explicitly used at a close pause point and the confirmations earn scarce checklist attention.
