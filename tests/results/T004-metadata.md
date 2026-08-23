@@ -1,0 +1,1 @@
+T004 pilot metadata placeholder. This file will be removed or replaced after issue linkage is recorded.
