@@ -8,7 +8,7 @@ Read `ARTIFACT-FITNESS.md` when the input is source text, a workflow, a procedur
 
 Do not assume the requested output should be a checklist merely because the source contains steps, bullets, or checkboxes.
 
-Proceed with this branch only for `CHECKLIST FIT` or the checklist portion of `SOP + CHECKLIST FIT`.
+Proceed with this branch only for `CHECKLIST FIT`, the checklist portion of `SOP + CHECKLIST FIT`, or the checklist portion of `TASK PLAN + CHECKLIST FIT`.
 
 If the result is `SOP FIT`, `DECISION SUPPORT FIT`, or `RESEARCH-DESIGN FIRST`, state that classification and do not force the material into a checklist.
 
