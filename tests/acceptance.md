@@ -121,6 +121,7 @@ Pass if:
 - identifies ordinary production/follow-up actions as `TASK PLAN` content;
 - extracts operational checks into one or more explicit pause points where omission risk matters;
 - allows `TASK PLAN + CHECKLIST FIT` when the task plan owns the route and checklist gates protect high-risk transitions;
+- when classification is `TASK PLAN + CHECKLIST FIT`, hands the checklist portion into Design while leaving ordinary production actions in the task plan;
 - leaves an unresolved policy/configuration question as a decision rather than making checkbox completion imply that the decision is settled;
 - treats state distinctions such as created/published/completed as state semantics, not checklist items;
 - treats minimum completion outcomes as completion criteria and only turns them into a checklist when they are actually invoked at an explicit close pause point;
