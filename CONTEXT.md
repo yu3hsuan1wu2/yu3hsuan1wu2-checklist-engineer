@@ -2,10 +2,27 @@
 
 This is the shared vocabulary for Checklist Engineer.
 
+## SOP
+A procedural source of truth whose primary function is to define how standard work should be performed consistently and reproducibly.
+
+An SOP may need scope, roles, prerequisites, complete workflow, branches, exceptions, records, and completion conditions. Completeness is usually a virtue for an SOP.
+
 ## Checklist
 A compact reliability tool used at a defined point in work to prevent known, avoidable execution failures while preserving professional judgment.
 
-A checklist is **not** a comprehensive SOP, manual, tutorial, knowledge base, or substitute for expertise.
+A checklist assumes the underlying work or preventive actions are already established. It is **not** a comprehensive SOP, manual, tutorial, knowledge base, or substitute for expertise. Selectivity is a virtue for a checklist.
+
+## Artifact fitness
+The functional classification of what work artifact a problem needs before design begins.
+
+Canonical classifications:
+- `SOP`
+- `CHECKLIST`
+- `SOP+CHECKLIST`
+- `DECISION SUPPORT`
+- `RESEARCH-DESIGN`
+
+Classify by the artifact's role in the work system, not by length, bullets, numbering, tables, or checkboxes.
 
 ## Failure pattern
 A recurring or plausible way work fails even though the necessary knowledge or preventive action is already known.
@@ -42,3 +59,6 @@ Use of a draft checklist in realistic work, followed by observation, revision, a
 
 ## Checkbox compliance
 A failure mode where the list is completed mechanically but the intended verification, communication, discipline, or outcome does not occur.
+
+## Principle Registry
+The canonical ledger at `docs/principles/PRINCIPLES.md` that records which checklist-engineering principles are candidate, active, deprecated, or rejected and what evidence/tests justify their status.
