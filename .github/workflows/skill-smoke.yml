@@ -26,20 +26,28 @@ jobs:
         run: |
           set -euo pipefail
           test -f .agents/skills/checklist-engineer/SKILL.md
+          test -f .agents/skills/checklist-engineer/references/ARTIFACT-FITNESS.md
           test -f .agents/skills/checklist-engineer/references/DESIGN.md
           test -f .agents/skills/checklist-engineer/references/AUDIT.md
           test -f .agents/skills/checklist-engineer/references/COMMUNICATION.md
           test -f .agents/skills/checklist-engineer/references/FIELD-TEST.md
           test -f .agents/skills/checklist-engineer/references/OUTPUT-CONTRACT.md
           grep -q '^name: checklist-engineer$' .agents/skills/checklist-engineer/SKILL.md
+          grep -q 'work plans' .agents/skills/checklist-engineer/SKILL.md
+          grep -q 'mixed procedural artifacts' .agents/skills/checklist-engineer/SKILL.md
+          grep -q 'Artifact-fitness gate' .agents/skills/checklist-engineer/SKILL.md
           grep -q 'Failure gate' .agents/skills/checklist-engineer/SKILL.md
           grep -q 'Pause-point gate' .agents/skills/checklist-engineer/SKILL.md
           grep -q 'Killer-item gate' .agents/skills/checklist-engineer/SKILL.md
           grep -q 'Communication gate' .agents/skills/checklist-engineer/SKILL.md
+          grep -q 'TASK PLAN' .agents/skills/checklist-engineer/references/ARTIFACT-FITNESS.md
+          grep -q 'MIXED ARTIFACT' .agents/skills/checklist-engineer/references/ARTIFACT-FITNESS.md
 
       - name: Verify source skill remains canonical
         shell: bash
         run: |
           set -euo pipefail
           test -f skills/checklist-engineer/SKILL.md
+          test -f skills/checklist-engineer/references/ARTIFACT-FITNESS.md
           cmp skills/checklist-engineer/SKILL.md .agents/skills/checklist-engineer/SKILL.md
+          cmp skills/checklist-engineer/references/ARTIFACT-FITNESS.md .agents/skills/checklist-engineer/references/ARTIFACT-FITNESS.md
