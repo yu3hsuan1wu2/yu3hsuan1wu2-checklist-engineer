@@ -1,7 +1,5 @@
 # Agent instructions
 
-Keep this file short. Follow pointers instead of duplicating their contents.
-
 Read `CONTEXT.md` when domain terminology affects a decision.
 
 ## Agent skills
