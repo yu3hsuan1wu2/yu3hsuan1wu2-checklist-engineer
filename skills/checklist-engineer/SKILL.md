@@ -1,6 +1,6 @@
 ---
 name: checklist-engineer
-description: Design, audit, or field-test operational checklists for complex work. Use when knowledge already exists but execution can fail through omission, distraction, handoff, or coordination; when a user asks whether a checklist is too long or too procedural; or when a draft checklist needs real-world testing. Preserve expert judgment and do not turn the checklist into an SOP.
+description: Design, audit, or field-test operational checklists for complex work. Use when turning source text or a workflow into a checklist, reviewing an existing checklist, deciding whether material is really an SOP rather than a checklist, or testing a draft in realistic use. Preserve expert judgment and do not turn the checklist into an SOP.
 ---
 
 # Checklist Engineer
@@ -11,15 +11,19 @@ A checklist is a small intervention inside a workflow. It protects critical know
 
 ## Select the branch
 
+- Source text, workflow, procedure, or uncertain artifact type → read `references/ARTIFACT-FITNESS.md` first.
 - New checklist or redesign from a workflow/failure pattern → read `references/DESIGN.md`.
-- Audit/review of an existing checklist → read `references/AUDIT.md`.
+- Audit/review of an existing checklist → read `references/AUDIT.md`; use `ARTIFACT-FITNESS.md` when SOP leakage or artifact misclassification is plausible.
 - Field-test, pilot, revision, or validation planning → read `references/FIELD-TEST.md`.
 - If communication checks may be needed → also read `references/COMMUNICATION.md`.
-- Before finalizing any branch → read `references/OUTPUT-CONTRACT.md`.
+- Before finalizing any checklist branch → read `references/OUTPUT-CONTRACT.md`.
 
 Do not load branch files that are irrelevant to the current request.
 
 ## Non-negotiable gates
+
+### Artifact-fitness gate
+Do not assume every procedural input should become a checklist. Classify by its function in the work system, not by length, bullets, numbering, or checkboxes.
 
 ### Failure gate
 Name the known, avoidable execution failure the checklist is meant to reduce. If the problem is mainly missing knowledge, undefined best practice, or a need to teach the whole procedure, say a checklist is not the primary solution.
@@ -64,4 +68,4 @@ Do not claim domain correctness that the evidence does not establish. Flag items
 
 ## Completion
 
-Do not finish until the branch-specific work satisfies `references/OUTPUT-CONTRACT.md`.
+Do not finish a checklist branch until the work satisfies `references/OUTPUT-CONTRACT.md`.
