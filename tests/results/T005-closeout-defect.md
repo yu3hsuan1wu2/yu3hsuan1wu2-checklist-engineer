@@ -68,10 +68,27 @@ Expected behavior remains:
 
 ## Install verification
 
-Pending PR-triggered GitHub Actions evidence. The repaired smoke must prove:
+PR #8 triggered `Skill smoke test` run #31 (`32641186138`). The `install-skill` job completed with **success**.
+
+Verified steps:
+
+- install `checklist-engineer` for Codex;
+- verify installed skill surface;
+- verify source skill remains canonical.
+
+The repaired smoke now proves:
 
 - `ARTIFACT-FITNESS.md` exists in the installed skill;
 - installed `ARTIFACT-FITNESS.md` contains the current Task Plan and Mixed Artifact surface;
-- installed `SKILL.md` contains the repaired invocation trigger language;
+- installed `SKILL.md` contains the repaired work-plan / mixed-artifact invocation trigger language;
 - installed `SKILL.md` equals canonical source;
 - installed `ARTIFACT-FITNESS.md` equals canonical source.
+
+## Closeout interpretation
+
+The two defects that invalidated the first formal closeout are repaired at their declared seams:
+
+1. model-facing invocation **contract** coverage;
+2. installed Artifact Fitness **surface** coverage.
+
+This does **not** prove deterministic autonomous model routing. That remains outside the current repository test harness and must not be claimed as verified.
