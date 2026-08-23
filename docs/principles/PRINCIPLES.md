@@ -74,17 +74,17 @@ Each principle entry must include:
 
 **Status:** ACTIVE  
 **Type:** PROJECT-SYNTHESIS  
-**Principle:** Determine what artifact the work needs before designing a checklist. Do not classify by length, bullets, numbering, or checkboxes.
+**Principle:** Determine what artifact the work needs before designing a checklist. Do not classify by length, bullets, numbering, or checkboxes. Mixed sources may need section-level decomposition.
 
-**Evidence:** Gawande distinguishes quick checklist tools from comprehensive how-to guidance and emphasizes preserving professional judgment; the project operationalizes that distinction as an artifact-routing gate.
+**Evidence:** Gawande distinguishes quick checklist tools from comprehensive how-to guidance and emphasizes preserving professional judgment; T003/T004 further show that bounded task plans and embedded checklist gates are functionally distinct.
 
-**Failure prevented:** Turning every procedural text into a checklist; checklist/SOP conflation.
+**Failure prevented:** Turning every procedural or checkbox-formatted text into a checklist; checklist/SOP/task-plan conflation.
 
-**Behavioral consequence:** Before creating or substantially redesigning a checklist from source material, classify the need as `SOP`, `CHECKLIST`, `SOP+CHECKLIST`, `DECISION SUPPORT`, or `RESEARCH-DESIGN`. Read `skills/checklist-engineer/references/ARTIFACT-FITNESS.md`.
+**Behavioral consequence:** Before creating or substantially redesigning a checklist from source material, classify the need using `SOP`, `CHECKLIST`, `TASK PLAN`, combined variants, `DECISION SUPPORT`, `RESEARCH-DESIGN`, or `MIXED ARTIFACT` as defined in `skills/checklist-engineer/references/ARTIFACT-FITNESS.md`.
 
-**Regression coverage:** Acceptance Cases 4, 5, 7, 8, 9.
+**Regression coverage:** Acceptance Cases 4, 5, 7, 8, 9, 11.
 
-**Supersedes / conflicts:** None.
+**Supersedes / conflicts:** Extended by P-011; no conflict.
 
 ### P-002 — Failure-first design
 
@@ -114,7 +114,7 @@ Each principle entry must include:
 
 **Behavioral consequence:** State exactly when the checklist starts and, when needed, what cannot proceed until it is complete.
 
-**Regression coverage:** Cases 1, 2, 3.
+**Regression coverage:** Cases 1, 2, 3, 11.
 
 **Supersedes / conflicts:** None.
 
@@ -146,7 +146,7 @@ Each principle entry must include:
 
 **Behavioral consequence:** Keep, cut, move, or rewrite candidate items using consequence + plausible omission + right pause point + observable confirmation.
 
-**Regression coverage:** Cases 1, 4.
+**Regression coverage:** Cases 1, 4, 11.
 
 **Supersedes / conflicts:** None.
 
@@ -178,7 +178,7 @@ Each principle entry must include:
 
 **Behavioral consequence:** State what remains professional judgment and what requires subject-matter validation.
 
-**Regression coverage:** Cases 2, 3, 5.
+**Regression coverage:** Cases 2, 3, 5, 11.
 
 **Supersedes / conflicts:** None.
 
@@ -226,29 +226,31 @@ Each principle entry must include:
 
 **Behavioral consequence:** Measure target failures, catches, defects, rework, coordination, or relevant outcomes; completion rate is secondary.
 
-**Regression coverage:** Case 6.
+**Regression coverage:** Cases 6, 11.
 
 **Supersedes / conflicts:** None.
+
+### P-011 — Separate task plans from operational checklists
+
+**Status:** ACTIVE  
+**Type:** FIELD-DERIVED  
+**Principle:** A bounded task/execution plan may sequence work, ownership, drafting, publication, follow-up, and decisions without functioning as either an SOP or an operational checklist. Keep production actions in the task plan and reserve checklist gates for high-risk transitions where critical omissions must be caught.
+
+**Evidence:** Two real-world administrative pilots independently exposed the same pattern: `tests/results/T003-T1-12-pilot.md` and `tests/results/T004-2026-08-21-daily-todo-pilot.md`. ADR 0004 records the durable classification decision.
+
+**Failure prevented:** Forcing every to-do sequence into SOP or Checklist; diluting operational checklists with ordinary production steps; treating unresolved decisions or status semantics as completed checks.
+
+**Behavioral consequence:** Artifact Fitness now recognizes `TASK PLAN FIT`, `TASK PLAN + CHECKLIST FIT`, and `MIXED ARTIFACT`. When a source is mixed, separate production actions, operational checks, decisions, state distinctions, and completion criteria by function before designing checklist surfaces.
+
+**Regression coverage:** Acceptance Case 11 plus T003/T004 pilot evidence.
+
+**Supersedes / conflicts:** Extends P-001. No conflict.
 
 ---
 
 ## Candidate principles
 
-### P-011 — Separate task plans from operational checklists
-
-**Status:** CANDIDATE  
-**Type:** HYPOTHESIS  
-**Principle:** A one-off task or execution plan may sequence work, ownership, drafting, and publication without functioning as either an SOP or an operational checklist. Keep production actions in the task plan and reserve checklist gates for high-risk transitions where critical omissions must be caught.
-
-**Evidence:** T003 real-world `T1-12` pilot. The six-step administrative list coordinated information gathering, drafting, approval, publication, and save verification. It did not teach a reusable standard procedure, yet several lines were production actions rather than reliability checks. See `tests/results/T003-T1-12-pilot.md`.
-
-**Failure prevented:** Forcing every to-do sequence into SOP or Checklist; diluting operational checklists with ordinary production steps; misclassifying one-off execution plans as standard procedures.
-
-**Behavioral consequence:** None yet. Do not change the runtime taxonomy from this single case. Challenge whether `TASK PLAN` or `TASK PLAN + CHECKLIST` should become a first-class Artifact Fitness category after additional real-world cases and an acceptance test.
-
-**Regression coverage:** T003 pilot only; formal acceptance case not yet established.
-
-**Supersedes / conflicts:** Potentially extends P-001 Artifact Fitness; does not currently supersede it.
+No current candidate is promoted automatically from T004's completion-criteria observation. Additional evidence is required before creating a new first-class artifact type for completion criteria.
 
 ---
 
