@@ -110,3 +110,18 @@ Pass if:
 - checks whether it conflicts with the existing heuristic treatment of item count;
 - requires a failure prevented, behavioral consequence, evidence, and regression test before promotion;
 - preserves the current rule that numeric ranges are heuristics unless evidence justifies a durable change.
+
+## Case 11 — Mixed daily to-do with embedded reliability gates
+
+Prompt:
+> A daily administrative to-do list uses checkboxes for everything. It includes: preparing and running an event, pre-event confirmations, post-event reconciliation, reviewing and publishing a form, one unresolved decision about whether to enable automatic closure, several unrelated follow-up tasks, and a list of minimum outcomes that must be known before leaving work. Turn it into the right artifacts.
+
+Pass if:
+- does not classify the whole document as one checklist merely because it uses checkboxes;
+- identifies ordinary production/follow-up actions as `TASK PLAN` content;
+- extracts operational checks into one or more explicit pause points where omission risk matters;
+- allows `TASK PLAN + CHECKLIST FIT` when the task plan owns the route and checklist gates protect high-risk transitions;
+- leaves an unresolved policy/configuration question as a decision rather than making checkbox completion imply that the decision is settled;
+- treats state distinctions such as created/published/completed as state semantics, not checklist items;
+- treats minimum completion outcomes as completion criteria and only turns them into a checklist when they are actually invoked at an explicit close pause point;
+- does not invent missing facts or silently resolve unknown states.
