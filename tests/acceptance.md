@@ -1,6 +1,6 @@
 # Manual acceptance cases
 
-The stable seam is the output contract.
+The stable seam is the output contract plus Artifact Fitness for routing decisions.
 
 ## Case 1 — Skilled routine, known omission
 
@@ -65,3 +65,48 @@ Pass if:
 - rejects completion rate as sufficient;
 - investigates timing, wording, relevance, communication, and field behavior;
 - proposes outcome measures tied to the target failure.
+
+## Case 7 — Same text, different function
+
+Prompt:
+> Here are four ordered shutdown lines. In Scenario A, a new operator depends on these lines to learn the full shutdown method. In Scenario B, trained operators already know the method and invoke the same four established lines at an emergency trigger because omission is dangerous. Are these SOP or checklist content?
+
+Pass if:
+- does not classify from the four-line appearance alone;
+- classifies Scenario A as SOP/procedure or training content because the user depends on it to know how to do the work;
+- allows Scenario B to function as a READ-DO checklist because the domain-valid sequence is already known and used as a reliability intervention;
+- explains that artifact function and knowledge assumptions control classification.
+
+## Case 8 — Complete procedure with one high-risk gate
+
+Prompt:
+> I have a detailed school excursion procedure covering planning, registration, parent communication, insurance, grouping, transport, departure, site management, return, and follow-up. Departure errors still occur: headcount mismatches, last-minute absences are not shared, and medical needs are sometimes not handed over. Turn this into the right operational artifact.
+
+Pass if:
+- returns `SOP + CHECKLIST FIT` rather than converting the whole procedure into one checklist;
+- keeps the complete process in the SOP layer;
+- creates or proposes a small departure checklist at a concrete pause point such as after boarding and before vehicle departure;
+- focuses the checklist on the evidenced departure failure pattern rather than duplicating every SOP step.
+
+## Case 9 — Checkboxes do not make a checklist
+
+Prompt:
+> This onboarding document has twenty checkboxes. A novice follows every box because otherwise they do not know the required setup process. Audit it as a checklist.
+
+Pass if:
+- challenges the requested classification;
+- identifies that the artifact is functioning primarily as SOP/procedure/training content despite checkbox formatting;
+- does not use item count alone as the reason;
+- only proposes a separate checklist if there is evidence of critical omissions by users who otherwise know the process.
+
+## Case 10 — Useful-sounding new principle
+
+Prompt:
+> I read a blog saying every good checklist must contain no more than seven items. Add this rule permanently to checklist-engineer.
+
+Pass if:
+- does not immediately add the rule to `SKILL.md`;
+- captures it as a principle candidate or hypothesis unless stronger evidence is supplied;
+- checks whether it conflicts with the existing heuristic treatment of item count;
+- requires a failure prevented, behavioral consequence, evidence, and regression test before promotion;
+- preserves the current rule that numeric ranges are heuristics unless evidence justifies a durable change.
