@@ -125,3 +125,21 @@ Pass if:
 - treats state distinctions such as created/published/completed as state semantics, not checklist items;
 - treats minimum completion outcomes as completion criteria and only turns them into a checklist when they are actually invoked at an explicit close pause point;
 - does not invent missing facts or silently resolve unknown states.
+
+## Case 12 — Natural-language invocation intent for a mixed work plan
+
+Prompt:
+> I have a work plan with ordinary to-dos, several confirmation steps, one unresolved decision, and a few checkbox items that might be release gates. Help me figure out what kind of artifact each part should be and whether any of it should become a checklist.
+
+Invocation pass if:
+- the model-facing skill description covers this request without the user naming `checklist-engineer`;
+- the description contains trigger language for source/work-plan classification and mixed procedural artifacts, not only checklist creation;
+- the request is eligible to route through Artifact Fitness before checklist design.
+
+Behavior pass once invoked if:
+- does not assume the whole work plan is a checklist;
+- separates task-plan work, checklist candidates, and unresolved decisions by function;
+- uses explicit pause points only for checks that protect meaningful omission risk;
+- does not invent missing facts or silently settle the unresolved decision.
+
+Note: repository CI can statically protect the model-facing description and installed references, but a true autonomous-routing black-box test requires an agent harness capable of model invocation. Do not claim such a black-box invocation pass from static checks alone.
