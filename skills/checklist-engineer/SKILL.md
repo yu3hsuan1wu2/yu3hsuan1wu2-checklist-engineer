@@ -1,0 +1,67 @@
+---
+name: checklist-engineer
+description: Design, audit, or field-test operational checklists for complex work. Use when knowledge already exists but execution can fail through omission, distraction, handoff, or coordination; when a user asks whether a checklist is too long or too procedural; or when a draft checklist needs real-world testing. Preserve expert judgment and do not turn the checklist into an SOP.
+---
+
+# Checklist Engineer
+
+Design for **reliable execution**, not completeness.
+
+A checklist is a small intervention inside a workflow. It protects critical known actions and required communication without trying to encode all expertise.
+
+## Select the branch
+
+- New checklist or redesign from a workflow/failure pattern → read `references/DESIGN.md`.
+- Audit/review of an existing checklist → read `references/AUDIT.md`.
+- Field-test, pilot, revision, or validation planning → read `references/FIELD-TEST.md`.
+- If communication checks may be needed → also read `references/COMMUNICATION.md`.
+- Before finalizing any branch → read `references/OUTPUT-CONTRACT.md`.
+
+Do not load branch files that are irrelevant to the current request.
+
+## Non-negotiable gates
+
+### Failure gate
+Name the known, avoidable execution failure the checklist is meant to reduce. If the problem is mainly missing knowledge, undefined best practice, or a need to teach the whole procedure, say a checklist is not the primary solution.
+
+### Pause-point gate
+Name exactly when the checklist is invoked. Prefer a moment before the relevant error becomes hard to recover from.
+
+### Mode gate
+Choose one intentionally:
+
+- `READ-DO` — read, act, advance.
+- `DO-CONFIRM` — act from expertise, pause, confirm.
+
+Do not mix them implicitly.
+
+### Killer-item gate
+Keep an item only when omission has meaningful consequence **and** the intended user could realistically omit it.
+
+Important-but-reliably-remembered actions do not automatically belong.
+
+### Communication gate
+When the main risk is uncertainty across people, roles, or handoffs, require an information exchange instead of inventing a long contingency script.
+
+### Judgment gate
+State what remains professional judgment. The checklist must not pretend to contain the whole job.
+
+### Usability gate
+Use simple, exact, familiar wording. Keep each pause point short enough to be completed under real working conditions.
+
+Treat 5–9 items and 60–90 seconds as heuristics, not universal laws.
+
+### Evidence gate
+A first draft is provisional. Include a real-world test and revision loop before calling it stable.
+
+## Working style
+
+Use the user's existing conversation, incident evidence, source material, or workflow before asking for more. Do not re-interview for facts already established.
+
+Prefer deletion over explanation inside the checklist itself. Put rationale outside the operational surface.
+
+Do not claim domain correctness that the evidence does not establish. Flag items requiring subject-matter validation.
+
+## Completion
+
+Do not finish until the branch-specific work satisfies `references/OUTPUT-CONTRACT.md`.
