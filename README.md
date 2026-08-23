@@ -10,6 +10,12 @@ The project operationalizes Atul Gawande's *The Checklist Manifesto* while using
 
 A checklist is not a complete SOP. It is a deliberately small reliability intervention placed where a known, avoidable execution failure is most likely or most costly, while preserving professional judgment.
 
+## Install
+
+```bash
+npx skills add yu3hsuan1wu2/yu3hsuan1wu2-checklist-engineer --skill checklist-engineer
+```
+
 ## Repository shape
 
 - `AGENTS.md` — short pointers only.
@@ -32,6 +38,6 @@ The skill can:
 
 It must preserve these gates: failure target, pause point, READ-DO/DO-CONFIRM mode, killer-item filtering, communication checks where needed, professional judgment, usability, field testing, and outcome measurement.
 
-## Status
+## v0.1.0 baseline
 
-`v0.1.0` bootstrap in progress.
+Bootstrap is complete when the repo contains the domain context, repo-local agent pointers, source maps, ADRs, installable skill, branch references, output contract, templates, and acceptance cases. This baseline is now present on `main`.
