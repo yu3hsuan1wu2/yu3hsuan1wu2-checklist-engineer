@@ -2,6 +2,16 @@
 
 Use this branch to create a new operational checklist or redesign one from a workflow.
 
+## 0. Run Artifact Fitness first
+
+Read `ARTIFACT-FITNESS.md` when the input is source text, a workflow, a procedure, or an artifact whose function is not already settled.
+
+Do not assume the requested output should be a checklist merely because the source contains steps, bullets, or checkboxes.
+
+Proceed with this branch only for `CHECKLIST FIT` or the checklist portion of `SOP + CHECKLIST FIT`.
+
+If the result is `SOP FIT`, `DECISION SUPPORT FIT`, or `RESEARCH-DESIGN FIRST`, state that classification and do not force the material into a checklist.
+
 ## 1. Define the reliability target
 
 State:
@@ -13,7 +23,7 @@ State:
 
 Do not begin by listing the whole workflow.
 
-## 2. Decide whether a checklist fits
+## 2. Confirm whether a checklist fits the reliability problem
 
 A checklist is a strong fit when:
 
@@ -25,7 +35,7 @@ A checklist is a strong fit when:
 Use another artifact when the real need is:
 
 - training → tutorial/playbook;
-- exhaustive procedure → SOP/manual;
+- exhaustive standard procedure → SOP/manual;
 - unresolved knowledge → research/decision work;
 - continuous monitoring → dashboard/automation;
 - nuanced judgment with no stable minimum checks → decision support, not a forced checklist.
