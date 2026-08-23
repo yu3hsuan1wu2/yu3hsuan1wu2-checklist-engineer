@@ -26,6 +26,7 @@ jobs:
         run: |
           set -euo pipefail
           test -f .agents/skills/checklist-engineer/SKILL.md
+          test -f .agents/skills/checklist-engineer/agents/openai.yaml
           test -f .agents/skills/checklist-engineer/references/ARTIFACT-FITNESS.md
           test -f .agents/skills/checklist-engineer/references/DESIGN.md
           test -f .agents/skills/checklist-engineer/references/AUDIT.md
@@ -42,12 +43,17 @@ jobs:
           grep -q 'Communication gate' .agents/skills/checklist-engineer/SKILL.md
           grep -q 'TASK PLAN' .agents/skills/checklist-engineer/references/ARTIFACT-FITNESS.md
           grep -q 'MIXED ARTIFACT' .agents/skills/checklist-engineer/references/ARTIFACT-FITNESS.md
+          grep -q '^  display_name: "Checklist Engineer"$' .agents/skills/checklist-engineer/agents/openai.yaml
+          grep -q '^  short_description: "Engineer reliable operational checklists"$' .agents/skills/checklist-engineer/agents/openai.yaml
+          ! grep -q 'allow_implicit_invocation: false' .agents/skills/checklist-engineer/agents/openai.yaml
 
       - name: Verify source skill remains canonical
         shell: bash
         run: |
           set -euo pipefail
           test -f skills/checklist-engineer/SKILL.md
+          test -f skills/checklist-engineer/agents/openai.yaml
           test -f skills/checklist-engineer/references/ARTIFACT-FITNESS.md
           cmp skills/checklist-engineer/SKILL.md .agents/skills/checklist-engineer/SKILL.md
+          cmp skills/checklist-engineer/agents/openai.yaml .agents/skills/checklist-engineer/agents/openai.yaml
           cmp skills/checklist-engineer/references/ARTIFACT-FITNESS.md .agents/skills/checklist-engineer/references/ARTIFACT-FITNESS.md
